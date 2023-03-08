@@ -1,0 +1,612 @@
+/* Hamburger NAV 
+------------------------------------------------ */
+
+/* closed */
+ /* header nav {
+   background-color: #7e7251;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   padding: 1rem;
+   text-align: center;
+
+
+} */
+/* 
+header nav .open {
+   right: 0;
+   
+} */
+
+/* header nav.open {
+   right: 0;
+} */
+
+/* header nav ul li,
+header nav ul li a {
+   display: block;
+   text-align: left;
+   margin: 0;
+
+} */
+
+/* nav ul li a{
+   border-radius: 0;
+   background: white;
+   
+} */
+
+/* nav ul li {
+   margin-bottom: 1rem;
+} */
+
+
+/* tablet - portrait */
+/* @media screen and (min-width: 768px) {
+   #close-button,
+   #open-button {
+       
+   }
+} */
+
+/* tablet - landscape */
+/* @media screen and (min-width: 1180px) {
+   #close-button,
+   #open-button {
+       display: none;
+   }
+   
+} */
+
+/* desktop */
+
+/* @media screen and (min-width: 1280px){
+
+   #close-button,
+   #open-button {
+       
+   }
+
+} */
+
+/* Phone/Tablet Hamburger Layout
+-------------------------------------*/
+
+@media (max-width: 768px) {
+
+   header {
+       flex-direction: column;
+       position: fixed;
+       padding: .5rem 0;
+       width: 100vw;
+       /* position: sticky; */
+       /* background-color: red; */
+       z-index: 30;
+       background-color: #7e7251;
+       box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.5);
+       transition: 400ms ease;
+       top: 0;
+   }
+
+   header h1 {
+    z-index: 30;
+    left: -100vw;
+   }
+
+   header img {
+       width: 100px;
+       position: relative;
+       /* left: 15px; ⬅︎ nudges logo closer to center */
+       z-index: 30;
+   }
+   
+   /* ↓ Navbar open ↓ */
+   header nav ul.menu-list {
+       max-height: 100vh; /* ← hides menu until opened */
+       transition: transform .5s ease-out; /* ← open speed */
+       top: -66vh; /* ← hides menu until opened */
+       text-align: center;
+       flex-direction: column;
+       /* background-color: #2a2929; */
+       background-color: #7e7251;
+       position: absolute;
+       width: 101%;
+       left: -10vw;
+       
+   }
+
+   header nav ul.menu-list li  {
+       display: flex;
+       flex-direction: column;
+       position: relative;
+       /* left: -100vw; */
+       z-index: 2;
+
+       
+       
+   }
+   
+   
+/* Hamburger Icon 
+-------------------------------------*/
+   header label.menu-icon {
+       display: inline-block;
+       padding: 20px 20px;
+       position: absolute;
+       right: 25px; /* ← horizontal position*/
+       top: 15px; /* ← vertical position */
+       z-index: 5;
+   }
+
+   /* ↓ center hamburger line ↓ */
+   header label.menu-icon span.navicon {
+       display: block;
+       position: relative;
+       transition: background .2s ease-out;
+       height: 5px; /* ← thickness of lines */
+       width: 35px; /* ← width of lines */
+       background: white; /* ← icon color */
+   }
+
+   /* ↓ top & bottom hamburger line ↓ */
+   header label.menu-icon .navicon:before,
+   header label.menu-icon .navicon:after {
+       content: '';
+       display: block;
+       height: 100%;
+       width: 100%;
+       position: absolute;
+       transition: all .2s ease-out;
+       background: white; /* ← icon color */
+   }
+
+   header label.menu-icon .navicon:before {
+       top: 15px; /* ← space below top line */
+   }
+
+   header label.menu-icon .navicon:after {
+       top: -15px; /* ← space above bottom line */
+   }
+
+
+/* Hamburger Icon Animation
+-------------------------------------*/
+   header input.menu-btn:checked ~ ul.menu-list {
+       /* max-height: 500px;  */
+       /* ↑ maximum height of the menu bar ↑
+            increase this if some of your
+            menu links are getting cut off */
+
+        transform: translateY(77vh);
+        transition: transform .4s ease-in;
+        
+
+   }
+
+   /* header input.menu-btn:checked ~ ul.menu-list li {
+        display: flex;
+   } */
+
+   /* ↓ hides center line for the X ↓ */
+   header input.menu-btn:checked ~ label.menu-icon span.navicon {
+       background: transparent;
+   }
+
+   header input.menu-btn:checked ~ label.menu-icon span.navicon:before {
+       transform: rotate(-45deg);
+   }
+
+   header input.menu-btn:checked ~ label.menu-icon span.navicon:after {
+       transform: rotate(45deg);
+   }
+
+   header input.menu-btn:checked ~ label.menu-icon:not(.steps) .navicon:before,
+   header input.menu-btn:checked ~ label.menu-icon:not(.steps) .navicon:after {
+       top: 0;
+   }
+
+
+} 
+/* --------------- Mobile Layout --------------------*/
+
+@media (max-width: 768px) {
+
+
+/* Main 
+---------------------------*/
+
+
+
+    .wrapper {
+        width: 100vw;
+    }
+    
+    section.hours {
+        flex-direction: column;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    #small.hours {
+        border: black 3px solid;
+        background: #7e7251;
+        line-height: 1.3;
+        padding: .5em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    #large.hours {
+        display: none;
+    }
+
+    div.info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text {
+        grid-column: 1/5;
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+    }
+
+    .opener {
+        min-height: 300px;
+        padding-top: 10rem;
+        
+    }
+
+    .title {
+        /* color: #2a2929; */
+        text-shadow: 2px 2px 15px black;
+        font-size: 100px;
+    }
+    
+ 
+
+/* HOME
+------------------------------ */
+    
+    #desktop.welcome  {
+        display: none;
+    }
+
+    #home.fifteen {
+        display: none;
+    }
+
+    #mobile.fifteen {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        text-align: center;
+        /* float: right; */
+        /* position: relative; */
+        z-index: 5;
+        /* background-color: red; */
+        margin-bottom: -1rem;
+    }
+
+    .fifteen img {
+        width: 200px;
+    }
+    
+    #mobile.welcome  {
+        color: black;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        grid: none;
+        text-align: center;
+    }
+
+    #mobile.welcome h1 {
+        color: black;
+        font-size: 60px;
+        margin-bottom: -2rem;
+    }
+
+    #desktop.welcome h2 {
+        margin-top: 1rem;
+        font-size: 40px;
+    }
+    
+    .home {
+        margin-top: 8rem;
+    }
+    
+    .overlay {
+        min-height: 300px;
+        position: center;
+        background-position: bottom;
+    }
+    
+    .text {
+        grid-column: 1/5;
+        background-color: rgba(255, 255, 255, 0.8);
+        height: 90%;
+        color: black;
+        padding: 1rem;
+    }
+
+    .food-scroll-element {
+        width: 600vw;
+        height: 200px;
+        z-index: 1;
+        border: white solid 3px;
+    }
+
+    .food-scroll-element img {
+        border: white solid 15px;
+    }
+
+
+
+    @keyframes primary {
+        from {
+            left: 0%;
+        }
+    
+        to {
+            left: -600vw;
+        }
+    }
+    
+    @keyframes secondary {
+        from {
+            left: 600vw;
+        }
+    
+        to {
+            left: 0%;
+        }
+    }
+
+
+ /* Menu  
+------------------------------*/
+
+    .pdf ul {
+        /* display: flex;
+        justify-content: space-between; */
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        padding: 0;
+    }
+
+    nav.menu-tabs {
+        width: 90vw;
+        border-bottom: 0;
+        /* margin: 0 auto; */
+        /* margin-left: -1rem; */
+        padding-right: 0;
+        
+    }
+    
+    
+    
+    nav.menu-tabs ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+
+        
+    }
+
+    nav.menu-tabs li {
+        padding: 10px;
+        border-radius: 1em;
+        margin: 1rem auto;
+        border: 3px solid #7e7251;
+
+    }
+    nav.menu-tabs li.selected-tab {
+        position: relative;
+        bottom: 0px;
+        background-color: white;
+
+    } 
+    nav.menu-tabs li.selected-tab a {
+        color: #d9b040;
+        font-weight: bold;
+        font-size: 1.3rem;
+    } 
+
+    #bye {
+        display: none;
+    }
+    
+    .selections {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---- breakfast ----- */
+
+    .waffle {
+        background-position: -30px -10px;
+        z-index: 1;
+
+    }
+
+    /* .waffle:after{
+        background: rgb(29, 29, 29);
+        z-index: 5;
+    } */
+    
+    .break,
+    .omelette,
+    .spec-om,
+    .choice {
+        display: block;
+    }
+
+    .add-on h2 {
+        margin: 0 2rem;
+    }
+
+
+    /* ---- lunch ---- */
+    
+    .lunch {
+        background-position: -650px 10px;
+        z-index: 0;
+    }
+    
+    
+    .melts,
+    .simple,
+    .special,
+    .cafe,
+    .soups,
+    .dressing {
+        display: block;
+    }
+
+    .ramona,
+    .blue {
+        grid-column: inherit;
+    }
+
+    .extra-2 {
+        grid-row-start: 4;
+    }
+
+    .extra-3 {
+        grid-row-start: 2;
+        margin-bottom: -2rem;
+    }
+
+    .extra-4 {
+        grid-row-start: 3;
+    }
+    
+
+    /* ---- coffee ---- */
+
+    .coffee {
+        background-position: -400px 60px;
+        z-index: 1;
+    }
+    
+    .frappe,
+    .good,
+    .smoothie {
+        display: block;
+    }
+
+
+
+
+
+/* Catering 
+--------------------------*/
+
+    .cater {
+        background-position: -300px -10px;
+        z-index: 0;
+    }
+
+    #cater-d {
+        display: none;
+    }
+
+    #cater-m {
+        display: block;
+    }
+
+    .rolls {
+        grid-column: span 1;
+    }
+
+    
+
+
+/* About 
+--------------------------*/
+
+    .about {
+        margin-top: 8rem;
+    }
+
+    .womxn img {
+        width: 80vw;
+    }
+
+    .womxn figcaption {
+        font-size: small;
+    }
+
+    .staff {
+        grid-template-columns: 1fr;
+        width: 70vw;
+    }
+
+    
+
+    #about.fifteen-mobile {
+        display: flex;
+        justify-content: center;
+        /* margin-top: -10rem; */
+        text-align: center;
+        /* float: right; */
+        /* position: relative; */
+        z-index: 5;
+        /* background-color: red; */
+        width: 150px;
+        margin: 0 auto;
+        text-align: center;
+        
+    }
+
+    #about.fifteen-desktop {
+        display: none;
+    }
+
+
+
+    
+
+/* Apply
+---------------------------*/
+    .apply {
+        margin-top: 8rem;
+    }
+
+    .hiring {
+        display: block;
+    }
+
+    .team {
+        /* height: 100vh; */
+        display: inline-block;
+    }
+
+    .team h1 {
+        text-align: center;
+        padding: 0;
+    }
+    
+    .team img {
+        margin: 0;
+    }
+    
+    .application h2 {
+        color: #d9b040;
+    }
+
+    .application li {
+        text-align: left;
+        
+    }
+
+
+
+}
