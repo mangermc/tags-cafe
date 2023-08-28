@@ -608,5 +608,8 @@ header nav ul li a {
     }
 
 
-
+    /*------ temp-phone down --*/
+    .temp-phone {
+        margin-top: 7rem;
+    }
 }

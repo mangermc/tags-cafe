@@ -1086,6 +1086,19 @@ section.location .fa-map-marker {
     font-size: 150%;
 }
 
+/*--- temp-phones -----*/
+
+.temp-phone {
+    text-align: center;
+    background-color: #d9b040;
+    color: white;
+    padding: 1rem;
+    padding-bottom: -.5rem;
+}
+
+.temp-phone h3{
+    text-transform: none;
+}
 
 
 
